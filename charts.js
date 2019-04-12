@@ -32,7 +32,7 @@ function createAxisAndSeries(field, name, opposite, bullet) {
   var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
 
   var series = chart.series.push(new am4charts.LineSeries());
-  series.dataFields.valueY = field;
+  series.dataFields.valueY = "% of votes";
   series.dataFields.dateX = "date";
   series.strokeWidth = 2;
   series.yAxis = valueAxis;
@@ -85,9 +85,9 @@ function createAxisAndSeries(field, name, opposite, bullet) {
   valueAxis.renderer.grid.template.disabled = true;
 }
 
-createAxisAndSeries("visits", "Visits", false, "circle");
-createAxisAndSeries("views", "Views", true, "triangle");
-createAxisAndSeries("hits", "Hits", true, "rectangle");
+createAxisAndSeries("Zelenski", "Zelenski", false, "circle");
+createAxisAndSeries("Timoshenko", "Timoshenko", true, "triangle");
+createAxisAndSeries("Poroshenko", "Poroshenko", true, "rectangle");
 
 // Add legend
 chart.legend = new am4charts.Legend();
@@ -102,22 +102,22 @@ function generateChartData() {
   firstDate.setDate(firstDate.getDate() - 100);
   firstDate.setHours(0, 0, 0, 0);
 /// starting number
-  var visits = 1600;
-  var hits = 2900;
-  var views = 8700;
+  var visits = 7.6;
+  var hits = 13.4;
+  var views = 7;
 
   var myData = {
-      candidate1: [100, 200],
-      candidate2: [300, 400],
-      candidate3: [50, 500]
+      Zelenski: [7.6, 9.4, 8, 8.8, 9, 9.4, 10.8, 10.9, 11.9, 14.9, 15.2, 16.4, 17.5, 19.6, 19.9, 20.3, 23.1],
+      Timoshenko: [13.4, 14.7, 14, 14.8, 14.2, 14.4, 13.4, 15.5, 15.1, 12.9, 9.6, 11.5, 13.5, 13.8, 13.9, 14],
+      Poroshenko: [7, 6.2, 8, 8.1, 8.6, 10.8, 7.7, 8.2, 10.4, 10.1, 10.8, 13.1, 13.1, 13.4, 13.1, 12.4]
   }
   var mynewuselessvar;
   for (var i = 0; i < myData.candidate1.length; i++) {
       chartData.push({
-        date: ["Jan", "Feb"],
-        visits: myData.candidate1[i],
-        hits: myData.candidate2[i],
-        views: myData.candidate3[i]
+        date: ["1st Nov", "22nd Nov", "3rd Dec","14th Dec", "18th Dec", "29th Dec", "3rd Jan", "15th Jan", "25th Jan", "4th Feb", "20th Feb", "27th Feb", "4th March", "7th March", "14th March"],
+        visits: myData.Zelenski[i],
+        hits: myData.Timoshenko[i],
+        views: myData.Poroshenko[i]
       });
   }
 
