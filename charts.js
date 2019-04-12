@@ -111,6 +111,7 @@ function generateChartData() {
       candidate2: [300, 400],
       candidate3: [50, 500]
   }
+  var mynewuselessvar;
   for (var i = 0; i < myData.candidate1.length; i++) {
       chartData.push({
         date: ["Jan", "Feb"],
