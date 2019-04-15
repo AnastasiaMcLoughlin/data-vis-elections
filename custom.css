@@ -5,3 +5,14 @@
   /* position: absolute; */
   height: 500px;
 }
+
+.zc-ref {
+  display: none;
+}
+#mapsdiv {
+  width: 100%;
+  height: 500px;
+  left:0;
+  right:0;
+  font-family: Helvetica, Arial, sans-serif;
+}
