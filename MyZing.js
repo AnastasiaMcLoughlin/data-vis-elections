@@ -104,8 +104,8 @@ var myConfig1 = {
 zingchart.render({
 	id : 'myChart1',
 	data : myConfig1,
-	height: '100%',
-	width: '100%'
+	height: 500,
+	width: 700
 });
 
 
@@ -116,8 +116,8 @@ var aDomain = [100000,40000000]; // [mix,max]
 zingchart.loadModules('maps,maps-usa');
 zingchart.render({
   "id":'myMaps',
-  "width":'100%',
-  "height":'100%',
+  "width": 800,
+  "height": 800,
   "modules":'choropleth',
   "data":{
     "title":{
@@ -343,7 +343,7 @@ var firstTimeLoad = true;
 
 /* custom module for choropleth charts */
 zingchart.defineModule("choropleth", "plugin", function (originalJson) {
-  console.log('rendering')
+  console.log('rendering');
 	if (originalJson.shapes[0].options) {
 		var options = originalJson.shapes[0].options;
 		var mapType = options.name;
